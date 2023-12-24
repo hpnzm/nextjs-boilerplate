@@ -1,11 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
+import counterReducer from "@/features/counter/counter-slice";
 
 /**
  * @see https://redux.js.org/usage/nextjs#the-app-router-architecture-and-redux
  */
 export const makeStore = () => {
   return configureStore({
-    reducer: {},
+    reducer: {
+      counter: counterReducer,
+    },
   });
 };
 
