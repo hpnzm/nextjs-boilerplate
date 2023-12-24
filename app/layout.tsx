@@ -6,6 +6,7 @@ import { ThemeProvider } from "./theme-provider";
 import { TailwindIndicator } from "@/components/ui/tailwind-indicator";
 import StoreProvider from "./store-provider";
 import { QueryProvider } from "./query-provider";
+import { SiteHeader } from "./site-header";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,7 +26,10 @@ export default function RootLayout({
         <ThemeProvider>
           <SessionProvider>
             <StoreProvider>
-              <QueryProvider>{children}</QueryProvider>
+              <QueryProvider>
+                <SiteHeader />
+                <div className="p-8">{children}</div>
+              </QueryProvider>
             </StoreProvider>
           </SessionProvider>
         </ThemeProvider>
